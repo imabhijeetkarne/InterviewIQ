@@ -28,7 +28,10 @@ function Auth({isModel = false}) {
     }
   }
   return (
-    <div className='w-full min-h-screen bg-[#f3f3f3] flex items-center justify-center px-6 py-20'>
+    <div className={`
+      w-full 
+      ${isModel ? "py-4" : "min-h-screen bg-[#f3f3f3] flex items-center justify-center px-6 py-20"}
+    `}>
         <motion.div 
         initial={{opacity:0 , y:-40}} 
         animate={{opacity:1 , y:0}} 
