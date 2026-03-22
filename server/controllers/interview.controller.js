@@ -397,12 +397,15 @@ export const finishInterview = async (req, res) => {
 
 export const getMyInterviews = async (req , res) =>{
   try {
+    console.log("Fetching interviews for user:", req.userId);
     const interviews = await Interview.find({userId:req.userId})
     .sort({createdAt: -1})
-    .select("Role Experience Mode FinalScore Status CreatedAt")
+    .select("role experience mode finalScore status createdAt resumeText")
 
+    console.log("Found interviews:", interviews.length);
     return res.status(200).json(interviews)
   } catch (error) {
+    console.log("Error fetching interviews:", error);
     return res.status(500).json({message : `Failed to find currentUser Interview ${error}`})
   }
 }
