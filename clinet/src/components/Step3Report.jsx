@@ -94,7 +94,7 @@ function Step3Report({ report }) {
     { align: "center" }
   );
 
-  currentY += 30;
+  currentY += 30; 
 
   // ================= SKILLS BOX =================
   doc.setFillColor(249, 250, 251);
