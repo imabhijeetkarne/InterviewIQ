@@ -30,7 +30,7 @@ function Pricing() {
     {
       id: "basic",
       name: "Starter Pack",
-      price: "₹1",
+      price: "₹100",
       credits: 150,
       description: "Great for focused practice and skill improvement.",
       features: [
