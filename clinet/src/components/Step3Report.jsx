@@ -16,9 +16,7 @@ function Step3Report({ report }) {
       </div>
     );
   }
-
   const navigate = useNavigate()
-
   const {
     finalScore = 0,
     confidence = 0,
@@ -52,7 +50,7 @@ function Step3Report({ report }) {
     shortTagline = "Work on clarity and confidence.";
   }
 
-   const score = finalScore;
+  const score = finalScore;
   const percentage = (score / 10) * 100;
 
 
@@ -94,7 +92,7 @@ function Step3Report({ report }) {
     { align: "center" }
   );
 
-  currentY += 30; 
+  currentY += 30;
 
   // ================= SKILLS BOX =================
   doc.setFillColor(249, 250, 251);
@@ -173,7 +171,6 @@ function Step3Report({ report }) {
   doc.save("AI_Interview_Report.pdf");
 };
 
-
   return (
     <div className='min-h-screen bg-linear-to-br from-gray-50 to-green-50 px-4 sm:px-6 lg:px-10 py-8'>
       <div className='mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4'>
@@ -189,33 +186,41 @@ function Step3Report({ report }) {
             <p className='text-gray-500 mt-2'>
               AI-powered performance insights
             </p>
+
           </div>
         </div>
 
         <button onClick={downloadPDF} className='bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl shadow-md transition-all duration-300 font-semibold text-sm sm:text-base text-nowrap'>Download PDF</button>
       </div>
 
+
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8'>
+
         <div className='space-y-6'>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="bg-white rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8 text-center">
+
             <h3 className="text-gray-500 mb-4 sm:mb-6 text-sm sm:text-base">
               Overall Performance
             </h3>
             <div className='relative w-20 h-20 sm:w-25 sm:h-25 mx-auto'>
               <CircularProgressbar
-                value={finalScore * 10}  // Convert score (0-10) to percentage (0-100)
-                text={`${finalScore}/10`}  // Show actual score out of 10
+                value={percentage}
+                text={`${score}/10`}
                 styles={buildStyles({
                   textSize: "18px",
                   pathColor: "#10b981",
-                  textColor: "#374151",  // Changed from red to gray for better contrast
+                  textColor: "#ef4444",
                   trailColor: "#e5e7eb",
                 })}
               />
             </div>
+
+            <p className="text-gray-400 mt-3 text-xs sm:text-sm">
+              Out of 10
+            </p>
 
             <div className="mt-4">
               <p className="font-semibold text-gray-800 text-sm sm:text-base">
@@ -225,7 +230,6 @@ function Step3Report({ report }) {
                 {shortTagline}
               </p>
             </div>
-
           </motion.div>
 
           <motion.div
@@ -236,7 +240,7 @@ function Step3Report({ report }) {
               Skill Evaluation
             </h3>
 
-             <div className='space-y-5'>
+            <div className='space-y-5'>
               {
                 skills.map((s, i) => (
                   <div key={i}>
@@ -261,10 +265,13 @@ function Step3Report({ report }) {
             </div>
 
           </motion.div>
+
+
         </div>
 
         <div className='lg:col-span-2 space-y-6'>
-              <motion.div
+
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className='bg-white rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-8'>
@@ -342,8 +349,14 @@ function Step3Report({ report }) {
             </div>
 
           </motion.div>
+
+
+
+
+
         </div>
       </div>
+
     </div>
   )
 }
