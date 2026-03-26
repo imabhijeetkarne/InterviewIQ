@@ -1,7 +1,7 @@
 //Mount -> Load Voice -> Intro speak -> Question Speak -> Mic On -> Timer Running -> Submit -> Feedback Speak -> Next Question -> Repeat -> Finish
 
 import React from 'react'
-import maleVideo from "../assets/videos/male-ai.mp4"
+import maleVideo from "../assets/Videos/male-ai.mp4"
 import femaleVideo from "../assets/videos/female-ai.mp4"
 import Timer from './Timer'
 import { motion } from "motion/react"
